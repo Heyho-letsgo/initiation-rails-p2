@@ -10,7 +10,7 @@ class Book < ActiveRecord::Base
     }
     
     
-    
+    scope :french, -> { where(category_id: 1) }
     
 end
 
