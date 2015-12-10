@@ -14,9 +14,13 @@ class BooksController < ApplicationController
   end
 
   def update
-    Book.find(params[:id]).update title: params[:title]
+    @book = Book.find(params[:id])
+    if @book.update title: params[:title]
     redirect_to "/books/#{params[:id]}"
-  end
+    else
+    render :show
+    end
+  end  
 
   def destroy
     Book.find(params[:id]).destroy
