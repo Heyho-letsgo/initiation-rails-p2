@@ -1,4 +1,6 @@
-<h1>Liste des livres</h1> <%= Book.count %>
+<h1>Liste des livres</h1>
+<h2><%= Book.count %> Livres</h2>
+<%= paginate @books %>
 <% @books.each do |book| %>
   <p><a href="/books/<%= book.id %>">
       <% if book.category %>
