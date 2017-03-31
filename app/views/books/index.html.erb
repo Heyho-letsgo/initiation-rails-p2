@@ -1,4 +1,4 @@
-<h1>Liste des livres</h1>
+<h1>Liste des livres</h1> <%= Book.count %>
 <% @books.each do |book| %>
   <p><a href="/books/<%= book.id %>">
       <% if book.category %>
